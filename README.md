@@ -11,7 +11,7 @@ let webUrl = 网址：https://www.tweenmax.com.cn/api/tweenmax/TweenMax()
 | 列表数据  | drawData | Array | [{src:'',name:''}] | 至少传输五个 | yes |
 | 中奖位置 | winPrizeIndex | String:-2000  | -2000 | 多少px，总长 | yes |
 | 中奖前留几个 | winIndex | Number:0 | 1 | （是第1个） | yes |
-| 滚动方式 | drawXY | Boolean  | Y:true X:false |  Y:true X:false | no |
+| 滚动方式 | drawXY | Boolean:true  | Y:true X:false |  Y:true X:false | no |
 | 模型数据 | resData | Object  | resData 定义样式 | 下方resData | yes |
 | 中奖数据 | drawDataSuccess | Object | {src:'',name:''} | 两个参数 | yes |
 | 动画初始化 | TweenMaxInit | Object | {ease:""} | webUrl上方地址 |  no |
