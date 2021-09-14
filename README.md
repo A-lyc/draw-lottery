@@ -5,7 +5,7 @@ let webUrl = 网址：https://www.tweenmax.com.cn/api/tweenmax/TweenMax()
 <draw-lottery/>
 ```
 ## props
-| 描述 | 名称 | 类型 | 例子 | 解释 | 是否必穿 |
+| 描述 | 名称 | 类型 | 例子 | 解释 | 是否必传 |
 | :----- | :-----:| :-----:  | :----- | :----- | :----- |
 | 动画时间 | animationTime | Number:10 | 10 | 10秒 | no | 
 | 列表数据  | drawData | Array | [{src:'',name:''}] | 至少传输五个 | yes |
