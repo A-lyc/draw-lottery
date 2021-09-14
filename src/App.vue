@@ -1,83 +1,204 @@
 <template>
   <div id="app">
-    ---
     <draw-lottery
-      :draw-data="drawData"
-      :draw-data-success="drawDataSuccess"
-      :draw-x-y="false"
+      :multi-draw-data="multiDrawData"
+      :draw-x-y="true"
       ref="helloworld"
       :win-prize-index="'-7700'"
-      :winIndex="5"
       :tween-max-init="{ delay: 0 }"
       :res-data="resData"
       :get-start="getStart"
+      :winIndex="2"
       :get-update="getUpdate"
       :get-complete="getComplete"
       :get-repeat="getReqeat"
     />
-    ---
+    <div class="boxa" @click="helloworldClick"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app",
+  name: "App",
+  components: {},
   data() {
     return {
-      msg: "Welcome to Your Vue.js App",
       sum: 0,
-      drawData: [
-        {
-          src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
-          name: "1",
-        },
-        {
-          src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
-          name: "2",
-        },
-        {
-          src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
-          name: "3",
-        },
-        {
-          src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
-          name: "4",
-        },
-      ],
-      drawDataSuccess: {
-        src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
-        name: "中奖",
-      },
       resData: {
         WH: {
           width: "110",
           height: "110",
-          overflow: "hidden",
         },
         IdBox: ["wi", "id_box"],
         classBox: ["", ""],
         classImg: [""],
       },
+      multiDrawData: [
+        {
+          drawData: [
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "1",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "2",
+            },
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "3",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+            src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
+            name: "中奖1",
+          },
+        },
+        {
+          drawData: [
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "1",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "2",
+            },
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "3",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+            src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
+            name: "中奖2",
+          },
+        },
+        {
+          drawData: [
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "1",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "2",
+            },
+            {
+              src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+              name: "3",
+            },
+            {
+              src: "https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+            src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
+            name: "中奖3",
+          },
+        },
+      ],
     };
   },
+  mounted() {},
   methods: {
     //动画结束时
     getComplete() {
       console.log("动画结束时...............................");
-      let item = setTimeout(() => {
-        this.sum += 1;
-        this.$refs.helloworld.play.restart(true);
-        this.$refs.helloworld.play.pause();
-        if (this.sum >= 4) {
-          clearTimeout(item);
-          return;
-        }
-        this.drawDataSuccess = {
-          src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
-          name: "中将" + this.sum,
-        };
-        this.$refs.helloworld.playClick();
-      }, 2000);
+     let multiDrawData = [
+        {
+          drawData: [
+            {
+              src: "./assets/logo.png",
+              name: "1",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "2",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "3",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+             src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+            name: "中奖1",
+          },
+        },
+        {
+          drawData: [
+            {
+              src: "./assets/logo.png",
+              name: "1",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "2",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "3",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+            src: "https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png",
+            name: "中奖2",
+          },
+        },
+        {
+          drawData: [
+            {
+              src: "./assets/logo.png",
+              name: "1",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "2",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "3",
+            },
+            {
+             src: "./assets/logo.png",
+              name: "4",
+            },
+          ],
+          drawDataSuccess: {
+             src: "https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png",
+            name: "中奖3",
+          },
+        },
+      ]
+      let item = setTimeout(()=>{
+              this.sum +=1
+             this.$refs.helloworld.play.restart(true);
+             this.$refs.helloworld.play.pause();
+              if(this.sum >= 2){
+                  clearTimeout(item)
+                  return
+              }
+              this.multiDrawData = multiDrawData
+              this.$refs.helloworld.playClick()
+          },2000)
     },
     //进行中
     getUpdate() {
@@ -105,8 +226,8 @@ export default {
 
 <style>
 .id_box {
-  width: 990px;
-  height: 110px;
+  width: 330px;
+  height: 330px;
   border: 1px solid red;
   border-radius: 5px;
   overflow: hidden;
