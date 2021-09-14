@@ -8,7 +8,7 @@ let webUrl = 网址：https://www.tweenmax.com.cn/api/tweenmax/TweenMax()
 | 描述 | 名称 | 类型 | 例子 | 解释 | 是否必传 |
 | :----- | :-----:| :-----:  | :----- | :----- | :----- |
 | 动画时间 | animationTime | Number:10 | 10 | 10秒 | no | 
-| 列表数据  | multiDataArr | Array | {drawData:[{src:'',name:''},drawDataSuccess:{}],} | 包含全部数据以及中将数据 | yes |
+| 列表数据  | multiDrawData | Array | {drawData:[{src:'',name:''},drawDataSuccess:{}],} | 包含全部数据以及中将数据 | yes |
 | 中奖位置 | winPrizeIndex | String:-2000  | -2000 | 多少px，总长 | yes |
 | 中奖前留几个 | winIndex | Number:0 | 1 | （是第1个） | yes |
 | 滚动方式 | drawXY | Boolean:true  | Y:true X:false |  Y:true X:false | no |
@@ -19,7 +19,7 @@ let webUrl = 网址：https://www.tweenmax.com.cn/api/tweenmax/TweenMax()
 | 已结束 | getComplete | Function | 收不到参数（bug） |  webUrl上方地址 | no |
 | Repeat | getRepeat | Function | 收不到参数（bug） | webUrl上方地址 | no |
 
-### multiDataArr
+### multiDrawData
 ```js
    multiDrawData: [
         {
