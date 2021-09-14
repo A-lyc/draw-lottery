@@ -1,7 +1,7 @@
 {
   "name": "draw-lottery",
-  "description": "一个老虎机抽奖，可以XY切换的插件，",
-  "version": "1.0.0",
+  "description": "一个老虎机抽奖，可以XY切换的插件，可以循环多个使用",
+  "version": "1.0.1",
   "author": "l-lyc <821328978@qq.com>",
   "license": "MIT",
   "private": false,
@@ -21,7 +21,9 @@
   ],
   "keywords": [
     "vue",
-    "draw"
+    "draw",
+    "老虎机抽奖",
+    "抽奖"
   ],
   "devDependencies": {
     "babel-core": "^6.26.0",
